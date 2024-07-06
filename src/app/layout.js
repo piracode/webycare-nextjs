@@ -1,6 +1,5 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import '../styles/normalize.css'
-import Test from '@/components/Test'
 
 export const metadata = {
   title: 'Create Next App',
@@ -22,10 +21,7 @@ export default function RootLayout({ children }) {
           rel='stylesheet'
         />
       </head>
-      <body suppressHydrationWarning={true}>
-        {children}
-        <Test />
-      </body>
+      <body suppressHydrationWarning={true}>{children}</body>
     </html>
   )
 }
