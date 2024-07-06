@@ -1,0 +1,17 @@
+:root {
+  --font-roboto: 'Roboto Flex', sans-serif;
+  --font-concert-one: 'Concert One', cursive;
+}
+
+body {
+  font-family: var(--font-roboto);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-concert-one);
+}
