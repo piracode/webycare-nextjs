@@ -1,22 +1,12 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
+import useFetch from '../utilities/useFetch'
 import { fetchHeaderNavigation } from '../utilities/api'
+import withDataFetch from '../components/withDataFetch'
 
-export default function Navigation() {
-  const [navigationData, setNavigationData] = useState(null)
-
-  useEffect(() => {
-    async function getData() {
-      const data = await fetchHeaderNavigation()
-      setNavigationData(data)
-    }
-    getData()
-  }, [])
-
-  if (!navigationData) return null
-
+const Navigation = ({ navigationData }) => {
   const { navigation_logo_svg, navigation_links } = navigationData.acf
 
   return (
@@ -39,3 +29,15 @@ export default function Navigation() {
     </nav>
   )
 }
+
+/** Uses the withDataFetch HOC to fetch navigation data and pass it to the Navigation component.*/
+
+const NavigationWithDataFetch = () => {
+  const { data, loading, error } = useFetch(fetchHeaderNavigation)
+  const WrappedNavigation = withDataFetch(Navigation)
+  return (
+    <WrappedNavigation navigationData={data} loading={loading} error={error} />
+  )
+}
+
+export default NavigationWithDataFetch
