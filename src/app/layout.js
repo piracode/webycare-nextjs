@@ -1,5 +1,7 @@
 import '../styles/globals.scss'
 import '../styles/normalize.css'
+import { ThemeProvider } from '@/components/ThemeContext'
+import ThemeToggleButton from '@/components/ToggleThemeButton'
 
 export const metadata = {
   title: 'Create Next App',
@@ -21,7 +23,9 @@ export default function RootLayout({ children }) {
           rel='stylesheet'
         />
       </head>
-      <body suppressHydrationWarning={true}>{children}</body>
+      <body suppressHydrationWarning={true}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   )
 }

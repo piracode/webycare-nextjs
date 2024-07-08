@@ -5,6 +5,7 @@ import Link from 'next/link'
 import useFetch from '../utilities/useFetch'
 import { fetchHeaderNavigation } from '../utilities/api'
 import withDataFetch from '../components/withDataFetch'
+import ThemeToggleButton from './ToggleThemeButton'
 
 const Navigation = ({ navigationData }) => {
   const { navigation_logo_svg, navigation_links } = navigationData.acf
@@ -14,7 +15,10 @@ const Navigation = ({ navigationData }) => {
       <div
         className='logo'
         dangerouslySetInnerHTML={{ __html: navigation_logo_svg }}
-      />
+      ></div>
+      <div>
+        <ThemeToggleButton />
+      </div>
       <ul>
         {navigation_links.map((link, index) => (
           <li key={index}>
