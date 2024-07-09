@@ -1,5 +1,6 @@
 import Navigation from '@/components/Navigation'
 import styles from './page.module.css'
+import ContactForm from '@/components/ContactForm'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <div className={styles.description}>
           <h1>Hello!!!</h1>
         </div>
+        <ContactForm />
       </main>
     </>
   )
