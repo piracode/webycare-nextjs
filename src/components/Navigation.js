@@ -8,7 +8,7 @@ import withDataFetch from '../components/withDataFetch'
 import ThemeToggleButton from './ToggleThemeButton'
 
 const Navigation = ({ navigationData }) => {
-  const { navigation_logo_svg, navigation_links } = navigationData?.acf
+  const { navigation_logo_svg, navigation_links } = navigationData?.acf || {}
 
   return (
     <nav>
@@ -33,6 +33,8 @@ const Navigation = ({ navigationData }) => {
     </nav>
   )
 }
+
+console.log(typeof process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY)
 
 /** Uses the withDataFetch HOC to fetch navigation data and pass it to the Navigation component.*/
 
