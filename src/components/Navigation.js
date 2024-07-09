@@ -8,7 +8,7 @@ import withDataFetch from '../components/withDataFetch'
 import ThemeToggleButton from './ToggleThemeButton'
 
 const Navigation = ({ navigationData }) => {
-  const { navigation_logo_svg, navigation_links } = navigationData.acf
+  const { navigation_logo_svg, navigation_links } = navigationData?.acf
 
   return (
     <nav>
@@ -20,7 +20,7 @@ const Navigation = ({ navigationData }) => {
         <ThemeToggleButton />
       </div>
       <ul>
-        {navigation_links.map((link, index) => (
+        {navigation_links?.map((link, index) => (
           <li key={index}>
             <Link
               href={`/${link.link_text.toLowerCase().replace(/\s+/g, '-')}`}
