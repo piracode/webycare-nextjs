@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import axios from 'axios'
+import { useRouter } from 'next/navigation'
 
 // This contact form implementation is based on the examples provided in the Form Carry documentation.
 // https://formcarry.com/docs/code-examples/react
@@ -9,15 +10,18 @@ import axios from 'axios'
 const ContactForm = () => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+  const router = useRouter()
 
   const submit = async (e) => {
     e.preventDefault()
 
+    console.log('Form Carry', process.env.NEXT_PUBLIC_FORM_CARRY_API)
+    console.log({ email })
+    console.log({ message })
     try {
       const response = await axios.post(
-        process.env.FORM_CARRY_API,
+        process.env.NEXT_PUBLIC_FORM_CARRY_API,
         {
           email,
           message,
@@ -30,22 +34,13 @@ const ContactForm = () => {
       )
 
       if (response.data.code === 200) {
-        setSubmitted(true)
+        router.push('/thank-you')
       } else {
         setError(response.data.message)
       }
     } catch (error) {
       setError(error.toString())
     }
-  }
-
-  if (submitted) {
-    return (
-      <p>
-        We've received your message, thank you for contacting us! Please allow
-        up to 48 hours to get a response.
-      </p>
-    )
   }
 
   return (
