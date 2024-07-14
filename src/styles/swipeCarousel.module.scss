@@ -1,0 +1,50 @@
+.swipeCarousel {
+  overflow: hidden;
+  background-color: #171717;
+  padding: 1rem 0;
+}
+
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  cursor: grab;
+  width: 100%;
+}
+
+.image {
+  height: 75vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carouselImage {
+  object-fit: contain;
+  width: 100%;
+  height: 60vh;
+}
+
+.dotContainer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #555555;
+  transition: background-color 0.3s;
+
+  &.active {
+    background-color: #a0cda7;
+  }
+}
+
+.carouselContainer,
+.carouselImage {
+  user-select: none;
+}

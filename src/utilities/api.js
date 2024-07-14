@@ -14,3 +14,17 @@ export async function fetchHeaderNavigation() {
     return null
   }
 }
+
+export const fetchProjects = async () => {
+  const response = await axios.get(
+    'https://martha.codes/webycare/wp-json/wp/v2/project'
+  )
+  return response.data
+}
+
+export const fetchImageById = async (id) => {
+  const response = await axios.get(
+    `https://martha.codes/webycare/wp-json/wp/v2/media/${id}`
+  )
+  return response.data
+}
