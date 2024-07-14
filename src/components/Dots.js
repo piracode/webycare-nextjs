@@ -9,6 +9,7 @@ const Dots = ({ imgIndex, setImgIndex, images }) => {
           key={idx}
           onClick={() => setImgIndex(idx)}
           className={`${styles.dot} ${imgIndex === idx ? styles.active : ''}`}
+          aria-label={`Slide ${idx + 1}`}
         />
       ))}
     </div>
