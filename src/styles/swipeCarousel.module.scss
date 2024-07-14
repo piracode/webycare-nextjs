@@ -43,3 +43,8 @@
     background-color: #a0cda7;
   }
 }
+
+.carouselContainer,
+.carouselImage {
+  user-select: none;
+}

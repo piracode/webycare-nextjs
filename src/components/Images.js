@@ -44,6 +44,7 @@ const Images = ({ imgIndex, images, springOptions }) => {
             data-mobile={image.mobile}
             alt={`Image ${idx}`}
             className={styles.carouselImage}
+            draggable='false'
           />
         </motion.div>
       ))}
