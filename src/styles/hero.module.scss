@@ -1,0 +1,51 @@
+// @import 'variables';
+@import 'mixins';
+
+.hero {
+  padding: 1.25rem;
+  //   text-align: center;
+}
+
+.heroBackground {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 60vh;
+}
+
+.heroButtons {
+  //   gap: 1rem;
+  cursor: pointer;
+}
+
+.button {
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.contactButton {
+  background-color: var(--green-turquoise);
+  color: var(--white);
+
+  &:hover {
+    background-color: var(--green-light-1);
+    color: var(--black);
+  }
+}
+
+.portfolioButton {
+  background-color: var(--green-medium);
+  color: var(--black);
+
+  &:hover {
+    background-color: var(--green-turquoise);
+    color: var(--white);
+  }
+}
+
+.descriptionBox {
+  background-color: var(--green-light-2);
+  padding: 1rem;
+  max-width: 21rem;
+}
