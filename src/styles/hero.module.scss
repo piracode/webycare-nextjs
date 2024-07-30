@@ -3,18 +3,52 @@
 
 .hero {
   padding: 1.25rem;
-  //   text-align: center;
+  position: relative;
 }
 
 .heroBackground {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 60vh;
+  height: 90vh;
+}
+
+.heroTitleContainer {
+  position: relative;
+  height: 10rem;
+}
+
+.heroTitle {
+  color: var(--black);
+  font-size: 2rem;
+  position: relative;
+}
+
+.heroTitleSpan {
+  position: absolute;
+  display: inline-block;
+  background-color: #a8e6cf;
+  padding: 0.3rem;
+}
+
+.welcome {
+  top: 0;
+  left: 0;
+}
+
+.to {
+  top: 2.85rem;
+  left: 7rem;
+}
+
+.webycare {
+  top: 5.7rem;
+  left: 8rem;
 }
 
 .heroButtons {
-  //   gap: 1rem;
+  display: block;
+  text-align: center;
   cursor: pointer;
 }
 
@@ -22,6 +56,14 @@
   padding: 0.625rem 1.25rem;
   border-radius: 0.5rem;
   transition: background-color 0.3s ease;
+  display: block;
+  max-width: 12.5rem;
+  width: 100%;
+  margin: 0 auto 0.7rem auto;
+}
+
+.button:last-child {
+  margin-bottom: 0;
 }
 
 .contactButton {

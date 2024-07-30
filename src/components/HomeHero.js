@@ -35,13 +35,22 @@ const Hero = () => {
       transition={{ duration: 1 }}
     >
       {/* Animate title sliding in from the left */}
-      <motion.h1
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5 }}
-      >
-        {heroData.title}
-      </motion.h1>
+      <div className={styles.heroTitleContainer}>
+        <motion.h1
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className={styles.heroTitle}
+        >
+          <span className={`${styles.heroTitleSpan} ${styles.welcome}`}>
+            Welcome
+          </span>
+          <span className={`${styles.heroTitleSpan} ${styles.to}`}>to</span>
+          <span className={`${styles.heroTitleSpan} ${styles.webycare}`}>
+            Webycare.
+          </span>
+        </motion.h1>
+      </div>
 
       {/* Animate description box sliding in from the right */}
       <motion.div
@@ -51,7 +60,7 @@ const Hero = () => {
         transition={{ duration: 1, delay: 0.5 }}
       >
         <p>{heroData.subtitle}</p>
-        <nav className={styles.heroButtons}>
+        <div className={styles.heroButtons}>
           {/* Button animations with hover effect */}
           <motion.a
             href={heroData.contactLink}
@@ -67,7 +76,7 @@ const Hero = () => {
           >
             {heroData.portfolioLinkTitle}
           </motion.a>
-        </nav>
+        </div>
       </motion.div>
     </motion.section>
   )
