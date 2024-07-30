@@ -1,5 +1,10 @@
+@import 'variables';
+
 body {
   font-family: var(--font-roboto);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--dark-grey);
 }
 
 h1,
@@ -10,3 +15,7 @@ h5,
 h6 {
   font-family: var(--font-concert-one);
 }
+
+// Add links styles down the road
+//Maybe add some margin styles too
+//add button global styles such as cursor pointer, ect..
