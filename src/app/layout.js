@@ -1,6 +1,7 @@
 import '../styles/globals.scss'
 import '../styles/normalize.css'
-import { ThemeProvider } from '@/components/ThemeContext'
+import { ThemeProvider } from '@/components/contexts/ThemeContext'
+import { DataProvider } from '@/components/contexts/DataContext'
 import ThemeToggleButton from '@/components/ToggleThemeButton'
 
 export const metadata = {
@@ -24,7 +25,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body suppressHydrationWarning={true}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <DataProvider>{children}</DataProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

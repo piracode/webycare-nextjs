@@ -3,12 +3,12 @@
 
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { motion, useMotionValue } from 'framer-motion'
 import Images from './Images'
 import Dots from './Dots'
 import styles from '../styles/swipeCarousel.module.scss'
-import { fetchProjects, fetchImageById } from '../utilities/api'
+import { DataContext } from './contexts/DataContext'
 
 const ONE_SECOND = 1000
 const AUTO_DELAY = ONE_SECOND * 10
@@ -22,32 +22,14 @@ const SPRING_OPTIONS = {
 }
 
 const SwipeCarousel = () => {
+  const { data } = useContext(DataContext)
   const [imgIndex, setImgIndex] = useState(0)
-  const [images, setImages] = useState([])
   const dragX = useMotionValue(0)
 
-  useEffect(() => {
-    // Load images from API
-    const loadImages = async () => {
-      const projects = await fetchProjects()
-      const images = await Promise.all(
-        projects.map(async (project) => {
-          const desktopImage = await fetchImageById(
-            project?.acf?.project_desktop_image
-          )
-          const mobileImage = await fetchImageById(
-            project?.acf?.project_mobile_image
-          )
-          return {
-            desktop: desktopImage?.source_url,
-            mobile: mobileImage?.source_url,
-          }
-        })
-      )
-      setImages(images)
-    }
+  const { images } = data || {}
 
-    loadImages()
+  useEffect(() => {
+    if (!images || images.length === 0) return
 
     // Auto-change images every 10 seconds
     const intervalRef = setInterval(() => {
@@ -60,7 +42,7 @@ const SwipeCarousel = () => {
     }, AUTO_DELAY)
 
     return () => clearInterval(intervalRef)
-  }, [images.length])
+  }, [images, dragX])
 
   // Handle drag end to change image
   const onDragEnd = () => {
@@ -71,6 +53,10 @@ const SwipeCarousel = () => {
     } else if (x >= DRAG_BUFFER && imgIndex > 0) {
       setImgIndex((prev) => prev - 1)
     }
+  }
+
+  if (!images || images.length === 0) {
+    return <div>Loading...</div>
   }
 
   return (

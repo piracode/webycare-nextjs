@@ -1,14 +1,18 @@
 'use client'
 
-import React from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
-import useFetch from '../utilities/useFetch'
-import { fetchHeaderNavigation } from '../utilities/api'
-import withDataFetch from '../components/withDataFetch'
+import { DataContext } from './contexts/DataContext'
 import ThemeToggleButton from './ToggleThemeButton'
 
-const Navigation = ({ navigationData }) => {
-  const { navigation_logo_svg, navigation_links } = navigationData?.acf || {}
+const Navigation = () => {
+  const { data } = useContext(DataContext)
+
+  // Check if data is available
+  if (!data || !data.headerData) return <div>Loading...</div>
+
+  const { headerData } = data
+  const { navigation_logo_svg, navigation_links } = headerData?.acf || {}
 
   return (
     <nav>
@@ -34,16 +38,4 @@ const Navigation = ({ navigationData }) => {
   )
 }
 
-console.log(typeof process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY)
-
-/** Uses the withDataFetch HOC to fetch navigation data and pass it to the Navigation component.*/
-
-const NavigationWithDataFetch = () => {
-  const { data, loading, error } = useFetch(fetchHeaderNavigation)
-  const WrappedNavigation = withDataFetch(Navigation)
-  return (
-    <WrappedNavigation navigationData={data} loading={loading} error={error} />
-  )
-}
-
-export default NavigationWithDataFetch
+export default Navigation
