@@ -69,6 +69,8 @@ const Hero = () => {
           <motion.a
             href={heroData.contactLink}
             className={`${styles.button} ${styles.contactButton}`}
+            //Will probably remove the scale on the buttons in the future, tried ebverything to fix the bluriness of the text but not working.
+            //Here is what I tried: https://stackoverflow.com/questions/14677490/blurry-text-after-using-css-transform-scale-in-chrome
             whileHover={{ scale: 1.1 }}
           >
             {heroData.contactLinkTitle}
