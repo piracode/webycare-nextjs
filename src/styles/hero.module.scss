@@ -4,6 +4,7 @@
 .hero {
   padding: 1.25rem;
   position: relative;
+  color: var(--text-color);
 }
 
 .heroBackground {
@@ -19,7 +20,7 @@
 }
 
 .heroTitle {
-  color: var(--black);
+  color: var(--text-color);
   font-size: 2rem;
   position: relative;
 }
@@ -27,7 +28,7 @@
 .heroTitleSpan {
   position: absolute;
   display: inline-block;
-  background-color: #a8e6cf;
+  background-color: var(--hero-title-spans);
   padding: 0.3rem;
 }
 
@@ -55,39 +56,49 @@
 .button {
   padding: 0.625rem 1.25rem;
   border-radius: 0.5rem;
-  transition: background-color 0.3s ease;
-  display: block;
+  transition: background-color 0.1s ease, transform 0.1s ease;
+  display: inline-block;
   max-width: 12.5rem;
   width: 100%;
   margin: 0 auto 0.7rem auto;
+  text-transform: uppercase;
 }
 
 .button:last-child {
   margin-bottom: 0;
 }
 
+.contactButton:hover,
+.portfolioButton:hover {
+  transform: scale(1.1);
+}
+
 .contactButton {
-  background-color: var(--green-turquoise);
-  color: var(--white);
+  background-color: var(--green-teal);
+  color: var(--inverted-text-color);
 
   &:hover {
-    background-color: var(--green-light-1);
-    color: var(--black);
+    background-color: var(--hover-contact-us);
+    color: var(--hover-text);
   }
 }
 
 .portfolioButton {
-  background-color: var(--green-medium);
+  background-color: var(--hero-portfolio-btn);
   color: var(--black);
 
   &:hover {
-    background-color: var(--green-turquoise);
-    color: var(--white);
+    background-color: var(--hover-portfolio);
+    color: var(--black);
   }
 }
 
 .descriptionBox {
-  background-color: var(--green-light-2);
+  background-color: var(--green-light-2-transparent);
   padding: 1rem;
   max-width: 21rem;
+}
+
+.buttonText {
+  display: inline-block;
 }
