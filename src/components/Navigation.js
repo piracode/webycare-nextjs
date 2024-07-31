@@ -3,7 +3,8 @@
 import React from 'react'
 import Link from 'next/link'
 import useFetch from '../utilities/useFetch'
-import { fetchHeaderNavigation } from '../utilities/api'
+// import { fetchHeaderNavigation } from '../utilities/api'
+import { fetchHeaderNavigation } from '../pages/api/navigation'
 import withDataFetch from '../components/withDataFetch'
 import ThemeToggleButton from './ToggleThemeButton'
 

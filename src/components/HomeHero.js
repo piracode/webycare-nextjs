@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { fetchHeroData } from '../utilities/api'
+import { fetchHeroData } from '../pages/api/pages'
 import { motion } from 'framer-motion'
 import styles from '../styles/hero.module.scss'
 

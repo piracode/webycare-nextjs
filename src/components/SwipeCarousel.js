@@ -8,7 +8,8 @@ import { motion, useMotionValue } from 'framer-motion'
 import Images from './Images'
 import Dots from './Dots'
 import styles from '../styles/swipeCarousel.module.scss'
-import { fetchProjects, fetchImageById } from '../utilities/api'
+import { fetchImageById } from '../pages/api/media'
+import { fetchProjects } from '../pages/api/projects'
 
 const ONE_SECOND = 1000
 const AUTO_DELAY = ONE_SECOND * 10
