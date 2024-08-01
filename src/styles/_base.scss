@@ -16,6 +16,32 @@ h6 {
   font-family: var(--font-concert-one);
 }
 
-// Add links styles down the road
+/* Links
+--------------------------------------------- */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:visited {
+  color: var(--link-visited-color);
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+a:focus {
+  color: var(--link-focus-color);
+  outline: none;
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--link-active-color);
+}
+
 //Maybe add some margin styles too
 //add button global styles such as cursor pointer, ect..
