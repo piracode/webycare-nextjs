@@ -10,12 +10,13 @@
 /* Light theme */
 body.light {
   // --background-color: #ffffff;
-  --text-color: #000000;
+  // --text-color: #000000;
+  --text-color: #333333;
   --inverted-text-color: #fff;
-  // --background-light: #ecf6f2;
-  // --background-light-2: #f5fff6;
+  --background-1: #ecf6f2;
+  // --background-light-2: #e5fce7;
   --gray-dark: #333333;
-  --green-light-1: #bcffd6;
+  --green-light-1: #d7fae5;
   --green-light-2: #d2f5e0;
   --green-light-2-transparent: rgba(210, 245, 224, 0.9);
   // --green-med: #94e8b4;
@@ -31,6 +32,13 @@ body.light {
   --hover-text: #fff;
   --hover-portfolio: #36dbc8;
   --hero-portfolio-btn: #83cc9f;
+
+  // Light theme Link
+  --link-color: #333;
+  --link-hover: #136a34;
+  --link-visited-color: #333;
+  --link-active-color: #cc6600;
+  --link-focus-color: #cc6600;
 }
 
 /* Dark theme */
@@ -38,7 +46,7 @@ body.dark {
   // --background-color: #121212;
   --text-color: #e0e0e0;
   --inverted-text-color: #000;
-  // --background-light: #1c1c1c;
+  --background-1: #1c1c1c;
   // --background-light-2: #262626;
   --gray-dark: #cccccc;
   // --green-light-1: #173f2a;
@@ -56,4 +64,11 @@ body.dark {
   --hover-text: #000;
   --hover-portfolio: #83cc9f;
   --hero-portfolio-btn: #a8e6cf;
+
+  // Dark theme link colors
+  --link-color: #bdf7e3;
+  --link-hover: #33ffc5;
+  --link-visited-color: #fff;
+  --link-active-color: #ffcc66;
+  --link-focus-color: #ffcc66;
 }

@@ -3,6 +3,7 @@ import styles from './page.module.css'
 import ContactForm from '@/components/ContactForm'
 import SwipeCarousel from '@/components/SwipeCarousel'
 import HomeHero from '@/components/HomeHero'
+import WhoAreWeSection from '@/components/WhoAreWeSection'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <div className={styles.description}>
           <HomeHero />
         </div>
+        <WhoAreWeSection />
         <ContactForm />
         <SwipeCarousel />
       </main>

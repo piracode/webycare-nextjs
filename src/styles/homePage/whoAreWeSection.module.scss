@@ -1,0 +1,35 @@
+@import '../mixins';
+
+.section {
+  background-color: var(--background-1);
+  padding: 1rem;
+
+  p {
+    max-width: 26.25rem;
+  }
+
+  a {
+    @include button-styles(
+      var(--green-teal),
+      var(--inverted-text-color),
+      var(--hover-contact-us),
+      var(--hover-text)
+    );
+    max-width: 15rem;
+    display: block;
+    margin: 2rem auto;
+  }
+}
+.title {
+  text-align: center;
+}
+
+.imageWrapper {
+  width: 8rem;
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
