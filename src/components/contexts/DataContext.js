@@ -1,10 +1,10 @@
 'use client'
 
-import React, { createContext, useState, useEffect } from 'react'
+import { createContext, useState, useEffect } from 'react'
 import CircularProgress from '@mui/material/CircularProgress'
 import Box from '@mui/material/Box'
 import { fetchHeaderNavigation } from '../../pages/api/navigation'
-import { fetchHeroData } from '../../pages/api/pages'
+import { fetchHeroData, fetchWhoAreWeData } from '../../pages/api/homePage'
 import { fetchProjects } from '../../pages/api/projects'
 import { fetchImageById } from '../../pages/api/media'
 import loadingStyles from '../../styles/withDataFetch.module.scss'
@@ -19,11 +19,13 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [headerData, heroData, projects] = await Promise.all([
-          fetchHeaderNavigation(),
-          fetchHeroData(),
-          fetchProjects(),
-        ])
+        const [headerData, heroData, projects, whoAreWeData] =
+          await Promise.all([
+            fetchHeaderNavigation(),
+            fetchHeroData(),
+            fetchProjects(),
+            fetchWhoAreWeData(),
+          ])
 
         const images = await Promise.all(
           projects.map(async (project) => {
@@ -40,8 +42,13 @@ export const DataProvider = ({ children }) => {
           })
         )
 
-        console.log('Fetched Data:', { headerData, heroData, images }) // Add console log here
-        setData({ headerData, heroData, images })
+        console.log('Fetched Data:', {
+          headerData,
+          heroData,
+          images,
+          whoAreWeData,
+        })
+        setData({ headerData, heroData, images, whoAreWeData })
       } catch (err) {
         console.error('Error fetching data:', err)
         setError(err)
