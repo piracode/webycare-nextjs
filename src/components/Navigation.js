@@ -15,7 +15,7 @@ const Navigation = () => {
   const { navigation_logo_svg, navigation_links } = headerData?.acf || {}
 
   return (
-    <nav>
+    <nav className='header-nav'>
       <div
         className='logo'
         dangerouslySetInnerHTML={{ __html: navigation_logo_svg }}

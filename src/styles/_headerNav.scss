@@ -1,7 +1,8 @@
-nav {
+.header-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--background-1);
 }
 
 .logo svg {
