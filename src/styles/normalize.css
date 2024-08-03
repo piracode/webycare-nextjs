@@ -407,3 +407,7 @@ video {
   width: auto;
   z-index: 100000;
 }
+
+ul {
+  padding: 0;
+}

@@ -4,6 +4,7 @@ import ContactForm from '@/components/ContactForm'
 import SwipeCarousel from '@/components/SwipeCarousel'
 import HomeHero from '@/components/HomeHero'
 import WhoAreWeSection from '@/components/WhoAreWeSection'
+import ServicesSection from '@/components/ServicesSection'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           <HomeHero />
         </div>
         <WhoAreWeSection />
+        <ServicesSection />
         <ContactForm />
         <SwipeCarousel />
       </main>
