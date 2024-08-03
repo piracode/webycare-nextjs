@@ -1,10 +1,8 @@
 'use client'
 
 import React, { useContext } from 'react'
-import { motion } from 'framer-motion'
-import { DataContext } from './contexts/DataContext'
-import styles from '../styles/homePage/servicesSection.module.scss'
-import Image from 'next/image'
+import { DataContext } from '../contexts/DataContext'
+import styles from '../../styles/homePage/servicesSection.module.scss'
 
 const HomePageServices = () => {
   const { data } = useContext(DataContext)

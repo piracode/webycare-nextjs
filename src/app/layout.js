@@ -2,7 +2,6 @@ import '../styles/globals.scss'
 import '../styles/normalize.css'
 import { ThemeProvider } from '@/components/contexts/ThemeContext'
 import { DataProvider } from '@/components/contexts/DataContext'
-import ThemeToggleButton from '@/components/ToggleThemeButton'
 
 export const metadata = {
   title: 'Create Next App',

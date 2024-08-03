@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/swipeCarousel.module.scss'
+import styles from '../../../styles/swipeCarousel.module.scss'
 
 const Dots = ({ imgIndex, setImgIndex, images }) => {
   return (

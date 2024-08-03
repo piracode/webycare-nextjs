@@ -1,9 +1,8 @@
 'use client'
 
-import React, { useContext, useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { DataContext } from './contexts/DataContext'
-import styles from '../styles/homePage/whoAreWeSection.module.scss'
+import React, { useContext } from 'react'
+import { DataContext } from '../contexts/DataContext'
+import styles from '../../styles/homePage/whoAreWeSection.module.scss'
 import Image from 'next/image'
 
 const WhoAreWeSection = () => {

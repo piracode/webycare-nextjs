@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useContext } from 'react'
-import { DataContext } from './contexts/DataContext'
-import SwipeCarousel from '@/components/SwipeCarousel'
-import styles from '../styles/homePage/ourWorkSection.module.scss'
+import { DataContext } from '../contexts/DataContext'
+import SwipeCarousel from '../common/SwipeCarousel/SwipeCarousel'
+import styles from '../../styles/homePage/ourWorkSection.module.scss'
 
 const OurWorkSection = () => {
   const { data } = useContext(DataContext)

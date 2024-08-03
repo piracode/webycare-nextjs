@@ -2,8 +2,8 @@
 
 import React, { useContext, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { DataContext } from './contexts/DataContext'
-import styles from '../styles/homePage/hero.module.scss'
+import { DataContext } from '../contexts/DataContext'
+import styles from '../../styles/homePage/hero.module.scss'
 
 const Hero = () => {
   const { data } = useContext(DataContext)

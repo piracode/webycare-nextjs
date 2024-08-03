@@ -2,7 +2,7 @@
 
 import React, { useContext } from 'react'
 import Link from 'next/link'
-import { DataContext } from './contexts/DataContext'
+import { DataContext } from '../contexts/DataContext'
 import ThemeToggleButton from './ToggleThemeButton'
 
 const Navigation = () => {

@@ -7,8 +7,8 @@ import React, { useContext, useState, useEffect } from 'react'
 import { motion, useMotionValue } from 'framer-motion'
 import Images from './Images'
 import Dots from './Dots'
-import styles from '../styles/swipeCarousel.module.scss'
-import { DataContext } from './contexts/DataContext'
+import styles from '../../../styles/swipeCarousel.module.scss'
+import { DataContext } from '../../contexts/DataContext'
 
 const ONE_SECOND = 1000
 const AUTO_DELAY = ONE_SECOND * 10
