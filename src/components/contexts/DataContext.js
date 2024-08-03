@@ -8,6 +8,7 @@ import {
   fetchHeroData,
   fetchWhoAreWeData,
   fetchServicesSectionData,
+  fetchOurWorkData,
 } from '../../pages/api/homePage'
 import { fetchProjects } from '../../pages/api/projects'
 import { fetchServices } from '../../pages/api/services'
@@ -31,6 +32,7 @@ export const DataProvider = ({ children }) => {
           whoAreWeData,
           services,
           servicesSectionData,
+          ourWork,
         ] = await Promise.all([
           fetchHeaderNavigation(),
           fetchHeroData(),
@@ -38,6 +40,7 @@ export const DataProvider = ({ children }) => {
           fetchWhoAreWeData(),
           fetchServices(),
           fetchServicesSectionData(),
+          fetchOurWorkData(),
         ])
 
         const images = await Promise.all(
@@ -62,6 +65,7 @@ export const DataProvider = ({ children }) => {
           // whoAreWeData,
           services,
           servicesSectionData,
+          ourWork,
         })
         setData({
           headerData,
@@ -70,6 +74,7 @@ export const DataProvider = ({ children }) => {
           whoAreWeData,
           services,
           servicesSectionData,
+          ourWork,
         })
       } catch (err) {
         console.error('Error fetching data:', err)

@@ -1,10 +1,11 @@
 import Navigation from '@/components/Navigation'
 import styles from './page.module.css'
 import ContactForm from '@/components/ContactForm'
-import SwipeCarousel from '@/components/SwipeCarousel'
+// import SwipeCarousel from '@/components/SwipeCarousel'
 import HomeHero from '@/components/HomeHero'
 import WhoAreWeSection from '@/components/WhoAreWeSection'
 import ServicesSection from '@/components/ServicesSection'
+import OurWorkSection from '@/components/WorkSection'
 
 export default function Home() {
   return (
@@ -18,7 +19,8 @@ export default function Home() {
         </div>
         <WhoAreWeSection />
         <ServicesSection />
-        <SwipeCarousel />
+        {/* <SwipeCarousel /> */}
+        <OurWorkSection />
         <ContactForm />
       </main>
     </>
