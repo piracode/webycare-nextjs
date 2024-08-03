@@ -4,7 +4,11 @@ import { createContext, useState, useEffect } from 'react'
 import CircularProgress from '@mui/material/CircularProgress'
 import Box from '@mui/material/Box'
 import { fetchHeaderNavigation } from '../../pages/api/navigation'
-import { fetchHeroData, fetchWhoAreWeData } from '../../pages/api/homePage'
+import {
+  fetchHeroData,
+  fetchWhoAreWeData,
+  fetchServicesSectionData,
+} from '../../pages/api/homePage'
 import { fetchProjects } from '../../pages/api/projects'
 import { fetchServices } from '../../pages/api/services'
 import { fetchImageById } from '../../pages/api/media'
@@ -20,14 +24,21 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [headerData, heroData, projects, whoAreWeData, services] =
-          await Promise.all([
-            fetchHeaderNavigation(),
-            fetchHeroData(),
-            fetchProjects(),
-            fetchWhoAreWeData(),
-            fetchServices(),
-          ])
+        const [
+          headerData,
+          heroData,
+          projects,
+          whoAreWeData,
+          services,
+          servicesSectionData,
+        ] = await Promise.all([
+          fetchHeaderNavigation(),
+          fetchHeroData(),
+          fetchProjects(),
+          fetchWhoAreWeData(),
+          fetchServices(),
+          fetchServicesSectionData(),
+        ])
 
         const images = await Promise.all(
           projects.map(async (project) => {
@@ -50,8 +61,16 @@ export const DataProvider = ({ children }) => {
           // images,
           // whoAreWeData,
           services,
+          servicesSectionData,
         })
-        setData({ headerData, heroData, images, whoAreWeData, services })
+        setData({
+          headerData,
+          heroData,
+          images,
+          whoAreWeData,
+          services,
+          servicesSectionData,
+        })
       } catch (err) {
         console.error('Error fetching data:', err)
         setError(err)

@@ -18,8 +18,8 @@ export default function Home() {
         </div>
         <WhoAreWeSection />
         <ServicesSection />
-        <ContactForm />
         <SwipeCarousel />
+        <ContactForm />
       </main>
     </>
   )

@@ -11,7 +11,7 @@ const HomePageServices = () => {
 
   //   console.log('Data in Services Hme Page:', data.services)
 
-  if (!data?.services) return null
+  if (!data?.services || !data?.servicesSectionData) return null
 
   return (
     <section className={styles['services-section']}>
@@ -27,6 +27,9 @@ const HomePageServices = () => {
           </li>
         ))}
       </ul>
+      <a href='/services' className={styles['learn-more-link']}>
+        {data.servicesSectionData.learnMoreAboutServices}
+      </a>
     </section>
   )
 }
