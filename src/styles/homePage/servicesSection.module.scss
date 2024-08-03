@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .services-section {
   background-color: var(--green-bright);
   text-align: center;
@@ -7,6 +9,18 @@
   }
   li {
     padding-bottom: 2rem;
+  }
+
+  a {
+    @include button-styles(
+      var(--green-teal),
+      var(--inverted-text-color),
+      var(--hover-contact-us),
+      var(--hover-text)
+    );
+    max-width: 15rem;
+    display: block;
+    margin: 2rem auto;
   }
 }
 

@@ -33,6 +33,7 @@ body.light {
   --hover-text: #fff;
   --hover-portfolio: #36dbc8;
   --hero-portfolio-btn: #83cc9f;
+  --green-hero-home: #d2f5e0;
 
   // Light theme Link
   --link-color: #333;
@@ -43,6 +44,10 @@ body.light {
 
   //HomePage SVG logos
   --homeSVGs: #2f4f4f;
+
+  //Swipe Carousel
+  --active-dot: #5a6665;
+  --dot-bg-color: #d0e8d2;
 }
 
 /* Dark theme */
@@ -55,7 +60,7 @@ body.dark {
   --gray-dark: #cccccc;
   // --green-light-1: #173f2a;
   --green-light-1: #3b7856;
-  --green-light-2: #285b40;
+  --green-light-2: #373d37;
   --green-light-2-transparent: rgba(37, 84, 59, 0.9);
   --green-bright: #2f4f4f;
   --green-med: #3b7856;
@@ -69,6 +74,7 @@ body.dark {
   --hover-text: #000;
   --hover-portfolio: #83cc9f;
   --hero-portfolio-btn: #a8e6cf;
+  --green-hero-home: #2a4f39;
 
   // Dark theme link colors
   --link-color: #bdf7e3;
@@ -80,4 +86,8 @@ body.dark {
   //HomePage SVG logos
   // --homeSVGs: #bcffd6;
   --homeSVGs: #83a891;
+
+  //Swipe Carousel
+  --active-dot: #d0e8d2;
+  --dot-bg-color: #5a6665;
 }
