@@ -2,7 +2,6 @@
 @import '../mixins';
 
 .hero {
-  padding: 1.25rem;
   position: relative;
   color: var(--text-color);
 }
@@ -11,7 +10,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 108vh;
+  height: 95vh;
 }
 
 .heroTitleContainer {
@@ -29,7 +28,7 @@
   position: absolute;
   display: inline-block;
   background-color: var(--hero-title-spans);
-  padding: 0.3rem 1.2rem;
+  padding: 0.3rem 0.5rem;
 }
 
 .welcome {
