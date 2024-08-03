@@ -6,6 +6,7 @@ import Box from '@mui/material/Box'
 import { fetchHeaderNavigation } from '../../pages/api/navigation'
 import { fetchHeroData, fetchWhoAreWeData } from '../../pages/api/homePage'
 import { fetchProjects } from '../../pages/api/projects'
+import { fetchServices } from '../../pages/api/services'
 import { fetchImageById } from '../../pages/api/media'
 import loadingStyles from '../../styles/withDataFetch.module.scss'
 
@@ -19,12 +20,13 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [headerData, heroData, projects, whoAreWeData] =
+        const [headerData, heroData, projects, whoAreWeData, services] =
           await Promise.all([
             fetchHeaderNavigation(),
             fetchHeroData(),
             fetchProjects(),
             fetchWhoAreWeData(),
+            fetchServices(),
           ])
 
         const images = await Promise.all(
@@ -43,12 +45,13 @@ export const DataProvider = ({ children }) => {
         )
 
         console.log('Fetched Data:', {
-          headerData,
-          heroData,
-          images,
-          whoAreWeData,
+          // headerData,
+          // heroData,
+          // images,
+          // whoAreWeData,
+          services,
         })
-        setData({ headerData, heroData, images, whoAreWeData })
+        setData({ headerData, heroData, images, whoAreWeData, services })
       } catch (err) {
         console.error('Error fetching data:', err)
         setError(err)

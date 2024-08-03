@@ -1,0 +1,21 @@
+.services-section {
+  background-color: var(--green-bright);
+  text-align: center;
+
+  h2 {
+    padding-bottom: 3rem;
+  }
+  li {
+    padding-bottom: 2rem;
+  }
+}
+
+.svg-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto;
+}
+
+.svg-icon path {
+  fill: var(--homeSVGs) !important;
+}
