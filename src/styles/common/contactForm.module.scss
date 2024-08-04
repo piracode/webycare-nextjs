@@ -1,0 +1,48 @@
+@import '../mixins';
+
+.form-section {
+  background-color: var(--green-dark);
+}
+.form {
+  background-color: var(--green-light-2-transparent);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--dark-green);
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+
+  button {
+    border: none;
+    cursor: pointer;
+
+    @include button-styles(
+      var(--green-teal),
+      var(--inverted-text-color),
+      var(--hover-contact-us),
+      var(--hover-text)
+    );
+    max-width: 15rem;
+    display: block;
+    margin: 2rem auto;
+  }
+
+  button:hover {
+    background-color: var(--darker-green);
+  }
+}
