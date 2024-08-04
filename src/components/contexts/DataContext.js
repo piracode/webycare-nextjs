@@ -4,6 +4,7 @@ import { createContext, useState, useEffect } from 'react'
 import CircularProgress from '@mui/material/CircularProgress'
 import Box from '@mui/material/Box'
 import { fetchHeaderNavigation } from '../../pages/api/navigation'
+import { fetchOurProcessData } from '../../pages/api/process'
 import {
   fetchHeroData,
   fetchWhoAreWeData,
@@ -33,6 +34,7 @@ export const DataProvider = ({ children }) => {
           services,
           servicesSectionData,
           ourWork,
+          ourProcess,
         ] = await Promise.all([
           fetchHeaderNavigation(),
           fetchHeroData(),
@@ -41,6 +43,7 @@ export const DataProvider = ({ children }) => {
           fetchServices(),
           fetchServicesSectionData(),
           fetchOurWorkData(),
+          fetchOurProcessData(),
         ])
 
         const images = await Promise.all(
@@ -63,9 +66,10 @@ export const DataProvider = ({ children }) => {
           // heroData,
           // images,
           // whoAreWeData,
-          services,
-          servicesSectionData,
-          ourWork,
+          // services,
+          // servicesSectionData,
+          // ourWork,
+          ourProcess,
         })
         setData({
           headerData,
@@ -75,6 +79,7 @@ export const DataProvider = ({ children }) => {
           services,
           servicesSectionData,
           ourWork,
+          ourProcess,
         })
       } catch (err) {
         console.error('Error fetching data:', err)

@@ -5,6 +5,7 @@ import HomeHero from '../components/homePage/HomeHero'
 import WhoAreWeSection from '../components/homePage/WhoAreWeSection'
 import ServicesSection from '../components/homePage/ServicesSection'
 import OurWorkSection from '../components/homePage/WorkSection'
+import OurProcessSection from '../components/homePage/OurProcessSection'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         </div>
         <WhoAreWeSection />
         <ServicesSection />
+        <OurProcessSection />
         <OurWorkSection />
         <ContactForm />
       </main>
