@@ -31,7 +31,7 @@ const Footer = () => {
 
   return (
     <>
-      <section>
+      <section className={styles.preferEmail}>
         <p>{prefer_to_email_text}</p>
         <p>{prefer_to_email_email}</p>
       </section>
