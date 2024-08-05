@@ -95,7 +95,11 @@ const Footer = () => {
               ))}
             </ul>
           </article>
-          <aside className={styles.newsletter}>
+          {/* For the future TODO:
+
+Maybe use https://emailoctopus.com/*/}
+
+          {/* <aside className={styles.newsletter}>
             <h4>Let’s Stay Connected</h4>
             <p>{stay_connected_description_text}</p>
             <form>
@@ -108,7 +112,7 @@ const Footer = () => {
                 {stay_connected_submit_button_text}
               </button>
             </form>
-          </aside>
+          </aside> */}
         </section>
         <section className={styles.socialsSection}>
           <h4>Follow Us</h4>
