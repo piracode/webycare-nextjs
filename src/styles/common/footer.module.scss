@@ -1,0 +1,25 @@
+.footer {
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+
+  .logoHeart svg {
+    width: 3rem;
+  }
+
+  .header {
+    padding: 2rem 1rem 1rem;
+  }
+
+  ul a {
+    color: var(--white);
+  }
+
+  li {
+    margin-bottom: 0.8rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+}
