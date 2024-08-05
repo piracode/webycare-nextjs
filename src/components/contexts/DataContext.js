@@ -5,6 +5,7 @@ import CircularProgress from '@mui/material/CircularProgress'
 import Box from '@mui/material/Box'
 import { fetchHeaderNavigation } from '../../pages/api/navigation'
 import { fetchOurProcessData } from '../../pages/api/process'
+import { fetchFooterNavigation } from '../../pages/api/footer'
 import {
   fetchHeroData,
   fetchWhoAreWeData,
@@ -35,6 +36,7 @@ export const DataProvider = ({ children }) => {
           servicesSectionData,
           ourWork,
           ourProcess,
+          footerData,
         ] = await Promise.all([
           fetchHeaderNavigation(),
           fetchHeroData(),
@@ -44,6 +46,7 @@ export const DataProvider = ({ children }) => {
           fetchServicesSectionData(),
           fetchOurWorkData(),
           fetchOurProcessData(),
+          fetchFooterNavigation(),
         ])
 
         const images = await Promise.all(
@@ -69,7 +72,8 @@ export const DataProvider = ({ children }) => {
           // services,
           // servicesSectionData,
           // ourWork,
-          ourProcess,
+          // ourProcess,
+          footerData,
         })
         setData({
           headerData,
@@ -80,6 +84,7 @@ export const DataProvider = ({ children }) => {
           servicesSectionData,
           ourWork,
           ourProcess,
+          footerData,
         })
       } catch (err) {
         console.error('Error fetching data:', err)

@@ -1,6 +1,7 @@
 import Navigation from '../components/common/Navigation'
 import styles from './page.module.css'
 import ContactForm from '../components/common/ContactForm'
+import Footer from '../components/common/Footer'
 import HomeHero from '../components/homePage/HomeHero'
 import WhoAreWeSection from '../components/homePage/WhoAreWeSection'
 import ServicesSection from '../components/homePage/ServicesSection'
@@ -22,6 +23,7 @@ export default function Home() {
         <OurProcessSection />
         <OurWorkSection />
         <ContactForm />
+        <Footer />
       </main>
     </>
   )
