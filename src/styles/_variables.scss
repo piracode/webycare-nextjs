@@ -48,6 +48,15 @@ body.light {
   //Swipe Carousel
   --active-dot: #5a6665;
   --dot-bg-color: #d0e8d2;
+
+  //Theme SVG
+  --theme-bg: #d0e8d2;
+  --theme-hover-bg: #b9ebbe;
+  --theme-svg-fill: #000;
+  --theme-svg-hover: #1b1b1b;
+
+  //Contact CTA
+  --contact-cta: #005c62;
 }
 
 /* Dark theme */
@@ -90,4 +99,13 @@ body.dark {
   //Swipe Carousel
   --active-dot: #d0e8d2;
   --dot-bg-color: #5a6665;
+
+  //Theme SVG
+  --theme-bg: #333;
+  --theme-hover-bg: #555;
+  --theme-svg-fill: #fff;
+  --theme-svg-hover: #ddd;
+
+  //Contact CTA
+  --contact-cta: #005c62;
 }

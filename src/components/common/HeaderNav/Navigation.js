@@ -2,12 +2,16 @@
 
 import React, { useContext, useState, useEffect } from 'react'
 import Link from 'next/link'
-import { DataContext } from '../contexts/DataContext'
-import ThemeToggleButton from './ToggleThemeButton'
+import { DataContext } from '../../contexts/DataContext'
+import ThemeToggleButton from '../ToggleThemeButton'
+import HamburgerMenu from './HamburgerMenu'
 
 const Navigation = () => {
   const { data } = useContext(DataContext)
   const [theme, setTheme] = useState('light')
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  console.log('Navigation', data)
 
   useEffect(() => {
     // Update the theme based on body class
@@ -23,9 +27,6 @@ const Navigation = () => {
     updateTheme()
 
     // Listen for changes to the body's class list
-
-    //https://stackoverflow.com/questions/3219758/detect-changes-in-the-dom
-    //https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
     const observer = new MutationObserver(updateTheme)
     observer.observe(document.body, {
       attributes: true,
@@ -38,6 +39,10 @@ const Navigation = () => {
 
   // Check if data is available
   if (!data || !data.headerData) return <div>Loading...</div>
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
 
   const { headerData } = data
   const {
@@ -57,19 +62,26 @@ const Navigation = () => {
               : light_mode_navigation_logo_svg,
         }}
       ></div>
-      <div>
+      <div className='right-section'>
         <ThemeToggleButton />
+        <div className='contact-link'>
+          <Link href='/contact'>Contact</Link>
+        </div>
+        <HamburgerMenu toggleMenu={toggleMenu} menuOpen={menuOpen} />
       </div>
-      <ul>
-        {navigation_links?.map((link, index) => (
-          <li key={index}>
-            <Link
-              href={`/${link.link_text.toLowerCase().replace(/\s+/g, '-')}`}
-            >
-              {link.link_text}
-            </Link>
-          </li>
-        ))}
+      <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        {navigation_links?.map(
+          (link, index) =>
+            link.link_text.toLowerCase() !== 'contact' && (
+              <li key={index}>
+                <Link
+                  href={`/${link.link_text.toLowerCase().replace(/\s+/g, '-')}`}
+                >
+                  {link.link_text}
+                </Link>
+              </li>
+            )
+        )}
       </ul>
     </nav>
   )
