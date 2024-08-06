@@ -10,6 +10,7 @@ const Navigation = () => {
   const { data } = useContext(DataContext)
   const [theme, setTheme] = useState('light')
   const [menuOpen, setMenuOpen] = useState(false)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
   console.log('Navigation', data)
 
@@ -35,6 +36,24 @@ const Navigation = () => {
 
     // Cleanup observer on unmount
     return () => observer.disconnect()
+  }, [])
+
+  // Updates window width and closes the menu if open when resizing to and from desktop view.
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+      if (window.innerWidth >= 1024) {
+        setMenuOpen(false)
+      }
+    }
+
+    // Initial check
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    // Cleanup event listener on unmount
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
   // Check if data is available
