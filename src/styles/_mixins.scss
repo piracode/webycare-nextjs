@@ -21,3 +21,32 @@
     color: $hover-text-color;
   }
 }
+
+// Helper function to convert pixels to ems
+@function px-to-em($px) {
+  @return $px / 16 * 1em;
+}
+
+// Mixin for media queries using em units
+@mixin media-query($min-width-px) {
+  @media (min-width: px-to-em($min-width-px)) {
+    @content;
+  }
+}
+
+// Mixin for predefined breakpoints
+@mixin breakpoint($size) {
+  @if $size == 'tablet' {
+    @include media-query(768) {
+      @content;
+    }
+  } @else if $size == 'desktop' {
+    @include media-query(1024) {
+      @content;
+    }
+  } @else if $size == 'large-desktop' {
+    @include media-query(1200) {
+      @content;
+    }
+  }
+}
