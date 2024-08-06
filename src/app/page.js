@@ -1,4 +1,4 @@
-import Navigation from '../components/common/Navigation'
+import Navigation from '../components/common/HeaderNav/Navigation'
 import styles from './page.module.css'
 import ContactForm from '../components/common/ContactForm'
 import Footer from '../components/common/Footer'

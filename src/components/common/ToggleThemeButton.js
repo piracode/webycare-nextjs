@@ -9,10 +9,11 @@ const ThemeToggleButton = () => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    // <button onClick={toggleTheme}>
-    //   Switch to {theme === 'dark' ? 'Light' : 'Dark'} Mode
-    // </button>
-    <button onClick={toggleTheme} aria-label='Toggle Theme'>
+    <button
+      className='theme-toggle-btn'
+      onClick={toggleTheme}
+      aria-label='Toggle Theme'
+    >
       {theme === 'dark' ? <DarkModeOutlinedIcon /> : <LightModeOutlinedIcon />}
     </button>
   )
