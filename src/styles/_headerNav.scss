@@ -68,6 +68,13 @@
   justify-content: space-between;
   background-color: var(--background-1);
   padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  width: 100%;
+  max-width: 100vw;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .contact-link {
@@ -92,8 +99,28 @@
   text-align: center;
   gap: 1rem;
   padding: 2rem;
+  // Animation styles
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links.open {
   display: flex;
+  // Animation styles
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideInFromTop 0.3s ease forwards;
+}
+
+/* Keyframes for sliding in the menu links from the top */
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
