@@ -1,5 +1,4 @@
 //Theme toggle Button
-
 .theme-toggle-btn {
   border: none;
   background-color: var(--theme-bg);
@@ -28,7 +27,6 @@
 }
 
 //Left section
-
 .logo svg {
   width: 5rem;
   height: auto;
@@ -37,10 +35,13 @@
 .logo {
   flex-grow: 1;
   flex-basis: 30%;
+
+  @include breakpoint('tablet') {
+    flex-basis: 10%;
+  }
 }
 
 //Right section
-
 .hamburger {
   display: block;
 }
@@ -52,6 +53,10 @@
   fill: var(--theme-svg-fill);
   fill: none;
   transform: scale(1.6);
+
+  @include breakpoint('tablet') {
+    display: none;
+  }
 }
 
 .right-section {
@@ -60,6 +65,11 @@
   justify-content: space-around;
   flex-grow: 1.5;
   gap: 0.8rem;
+
+  @include breakpoint('tablet') {
+    order: 1;
+    justify-content: space-evenly;
+  }
 }
 
 .header-nav {
@@ -75,6 +85,12 @@
   width: 100%;
   max-width: 100vw;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  @include breakpoint('tablet') {
+    .nav-links {
+      order: 0; // Ensuring the nav-links appear first
+    }
+  }
 }
 
 .contact-link {
@@ -99,18 +115,28 @@
   text-align: center;
   gap: 1rem;
   padding: 2rem;
-  // Animation styles
   opacity: 0;
   transform: translateY(-100%);
   transition: opacity 0.3s ease, transform 0.3s ease;
-}
 
-.nav-links.open {
-  display: flex;
-  // Animation styles
-  opacity: 1;
-  transform: translateY(0);
-  animation: slideInFromTop 0.3s ease forwards;
+  &.open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideInFromTop 0.3s ease forwards;
+  }
+
+  @include breakpoint('tablet') {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background: none;
+    gap: 2.75rem;
+    opacity: 1;
+    transform: none;
+    padding: 0;
+  }
 }
 
 /* Keyframes for sliding in the menu links from the top */
