@@ -89,18 +89,16 @@ const Navigation = () => {
         <HamburgerMenu toggleMenu={toggleMenu} menuOpen={menuOpen} />
       </div>
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        {navigation_links?.map(
-          (link, index) =>
-            link.link_text.toLowerCase() !== 'contact' && (
-              <li key={index}>
-                <Link
-                  href={`/${link.link_text.toLowerCase().replace(/\s+/g, '-')}`}
-                >
-                  {link.link_text}
-                </Link>
-              </li>
-            )
-        )}
+        {navigation_links?.map((link, index) => {
+          const linkText = link.link_text.toLowerCase().replace(/\s+/g, '-')
+          return (
+            <li key={index}>
+              <Link href={linkText === 'home' ? '/' : `/${linkText}`}>
+                {link.link_text}
+              </Link>
+            </li>
+          )
+        })}
       </ul>
     </nav>
   )
