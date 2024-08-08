@@ -72,15 +72,17 @@ const Navigation = () => {
 
   return (
     <nav className='header-nav'>
-      <div
-        className='logo'
-        dangerouslySetInnerHTML={{
-          __html:
-            theme === 'dark'
-              ? dark_mode_navigation_logo_svg
-              : light_mode_navigation_logo_svg,
-        }}
-      ></div>
+      <Link href='/'>
+        <div
+          className='logo'
+          dangerouslySetInnerHTML={{
+            __html:
+              theme === 'dark'
+                ? dark_mode_navigation_logo_svg
+                : light_mode_navigation_logo_svg,
+          }}
+        ></div>
+      </Link>
       <div className='right-section'>
         <ThemeToggleButton />
         <div className='contact-link'>
