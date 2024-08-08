@@ -22,8 +22,8 @@ const WhoAreWeSection = () => {
           src={image}
           alt='Who are we'
           //get the alt from WordPress?
-          width={288}
-          height={288}
+          width={150}
+          height={150}
           className={styles.image}
         />
       </div>
