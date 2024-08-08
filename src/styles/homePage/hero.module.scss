@@ -63,14 +63,14 @@
 //   text-transform: uppercase;
 // }
 
-.button {
-  @include button-styles(
-    var(--green-teal),
-    var(--inverted-text-color),
-    var(--hover-contact-us),
-    var(--hover-text)
-  );
-}
+// .button {
+//   @include button-styles(
+//     var(--green-teal),
+//     var(--inverted-text-color),
+//     var(--hover-contact-us),
+//     var(--hover-text)
+//   );
+// }
 
 .contactButton {
   @include button-styles(

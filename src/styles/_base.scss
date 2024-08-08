@@ -14,10 +14,13 @@ h4,
 h5,
 h6 {
   font-family: var(--font-concert-one);
+  text-align: center;
+  line-height: 1.3;
 }
 
 /* Links
 --------------------------------------------- */
+
 a {
   color: var(--link-color);
   text-decoration: none;
