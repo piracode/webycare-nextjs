@@ -1,0 +1,28 @@
+@import '../mixins';
+
+.heroSection {
+  max-width: 33.75rem;
+
+  //Contact us & view portfolio CTA
+  .button {
+    display: block;
+  }
+
+  .contactButton {
+    @include button-styles(
+      var(--green-teal),
+      var(--inverted-text-color),
+      var(--hover-contact-us),
+      var(--hover-text)
+    );
+  }
+
+  .portfolioButton {
+    @include button-styles(
+      var(--hero-portfolio-btn),
+      var(--black),
+      var(--hover-portfolio),
+      var(--black)
+    );
+  }
+}
