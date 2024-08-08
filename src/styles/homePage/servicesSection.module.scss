@@ -1,9 +1,6 @@
 @import '../mixins';
 
 .services-section {
-  background-color: var(--green-bright);
-  text-align: center;
-
   h2 {
     padding-bottom: 3rem;
   }
@@ -15,7 +12,7 @@
     @include button-styles(
       var(--green-teal),
       var(--inverted-text-color),
-      var(--hover-contact-us),
+      var(--hover-CTA-1),
       var(--hover-text)
     );
     max-width: 15rem;

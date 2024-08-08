@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 body {
   font-family: var(--font-roboto);
@@ -14,10 +15,13 @@ h4,
 h5,
 h6 {
   font-family: var(--font-concert-one);
+  text-align: center;
+  line-height: 1.3;
 }
 
 /* Links
 --------------------------------------------- */
+
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -45,6 +49,19 @@ a:active {
 
 /* Elements
 --------------------------------------------- */
+
+/* Apply alternating sections bg color only to main sections */
+main > section {
+  @include alternating-sections(
+    var(--background-1),
+    var(--background-2),
+    var(--background-3),
+    var(--background-4),
+    var(--background-5),
+    var(--background-6),
+    var(--background-7)
+  );
+}
 
 section {
   padding: 1.25rem;

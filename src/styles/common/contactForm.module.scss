@@ -1,10 +1,10 @@
 @import '../mixins';
 
 .form-section {
-  background-color: var(--green-dark);
+  background-color: var(--form-background) !important;
 }
 .form {
-  background-color: var(--green-light-2-transparent);
+  background-color: var(--form-field-background) !important;
   padding: 2rem;
   border-radius: 0.5rem;
   max-width: 500px;
@@ -34,7 +34,7 @@
     @include button-styles(
       var(--green-teal),
       var(--inverted-text-color),
-      var(--hover-contact-us),
+      var(--hover-CTA-1),
       var(--hover-text)
     );
     max-width: 15rem;

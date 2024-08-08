@@ -15,9 +15,7 @@ export default function Home() {
         <Navigation />
       </header>
       <main className={styles.main}>
-        <div className={styles.description}>
-          <HomeHero />
-        </div>
+        <HomeHero />
         <WhoAreWeSection />
         <ServicesSection />
         <OurProcessSection />

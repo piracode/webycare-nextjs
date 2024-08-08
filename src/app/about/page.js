@@ -1,11 +1,18 @@
+import Navigation from '@/components/common/HeaderNav/Navigation'
+import Footer from '@/components/common/Footer'
+import styles from '../page.module.css'
+import AboutHero from '@/components/aboutPage/AboutHero'
+
 export default function About() {
   return (
     <>
-      <header></header>
-      <main>
-        <h1>About Us</h1>
-        <p>Welcome to the About page.</p>
+      <header>
+        <Navigation />
+      </header>
+      <main className={styles.main}>
+        <AboutHero />
       </main>
+      <Footer />
     </>
   )
 }

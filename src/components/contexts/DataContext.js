@@ -6,6 +6,7 @@ import Box from '@mui/material/Box'
 import { fetchHeaderNavigation } from '../../pages/api/navigation'
 import { fetchOurProcessData } from '../../pages/api/process'
 import { fetchFooterNavigation } from '../../pages/api/footer'
+import { fetchAboutPageData } from '../../pages/api/about'
 import {
   fetchHeroData,
   fetchWhoAreWeData,
@@ -37,6 +38,7 @@ export const DataProvider = ({ children }) => {
           ourWork,
           ourProcess,
           footerData,
+          aboutData,
         ] = await Promise.all([
           fetchHeaderNavigation(),
           fetchHeroData(),
@@ -47,7 +49,11 @@ export const DataProvider = ({ children }) => {
           fetchOurWorkData(),
           fetchOurProcessData(),
           fetchFooterNavigation(),
+          fetchAboutPageData(),
         ])
+
+        // Fetch hero image for the About page
+        const heroImage = await fetchImageById(aboutData.hero_image)
 
         const images = await Promise.all(
           projects.map(async (project) => {
@@ -73,7 +79,8 @@ export const DataProvider = ({ children }) => {
           // servicesSectionData,
           // ourWork,
           // ourProcess,
-          footerData,
+          // footerData,
+          aboutData,
         })
         setData({
           headerData,
@@ -85,6 +92,13 @@ export const DataProvider = ({ children }) => {
           ourWork,
           ourProcess,
           footerData,
+          aboutData: {
+            ...aboutData,
+            hero_image: {
+              url: heroImage.source_url,
+              alt: heroImage.alt_text || 'Hero Image',
+            },
+          },
         })
       } catch (err) {
         console.error('Error fetching data:', err)
