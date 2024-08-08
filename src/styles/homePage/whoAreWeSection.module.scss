@@ -1,7 +1,7 @@
 @import '../mixins';
 
 .section {
-  background-color: var(--background-1);
+  // background-color: var(--background-1);
 
   p {
     max-width: 26.25rem;
@@ -11,7 +11,7 @@
     @include button-styles(
       var(--green-teal),
       var(--inverted-text-color),
-      var(--hover-contact-us),
+      var(--hover-CTA-1),
       var(--hover-text)
     );
     max-width: 15rem;

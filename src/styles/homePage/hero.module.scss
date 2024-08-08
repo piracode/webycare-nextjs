@@ -3,7 +3,6 @@
 
 .hero {
   position: relative;
-  color: var(--text-color);
 }
 
 .heroBackground {
@@ -19,7 +18,6 @@
 }
 
 .heroTitle {
-  color: var(--text-color);
   font-size: 2rem;
   position: relative;
 }
@@ -52,31 +50,11 @@
   cursor: pointer;
 }
 
-// .button {
-//   padding: 0.625rem 1.25rem;
-//   border-radius: 0.5rem;
-//   transition: background-color 0.1s ease, transform 0.1s ease;
-//   display: inline-block;
-//   max-width: 12.5rem;
-//   width: 100%;
-//   margin: 0 auto 0.7rem auto;
-//   text-transform: uppercase;
-// }
-
-// .button {
-//   @include button-styles(
-//     var(--green-teal),
-//     var(--inverted-text-color),
-//     var(--hover-contact-us),
-//     var(--hover-text)
-//   );
-// }
-
 .contactButton {
   @include button-styles(
     var(--green-teal),
     var(--inverted-text-color),
-    var(--hover-contact-us),
+    var(--hover-CTA-1),
     var(--hover-text)
   );
 }
@@ -95,19 +73,13 @@
 }
 
 .contactButton {
-  background-color: var(--green-teal);
-  color: var(--inverted-text-color);
-
   &:hover {
-    background-color: var(--hover-contact-us);
+    background-color: var(--hover-CTA-1);
     color: var(--hover-text);
   }
 }
 
 .portfolioButton {
-  background-color: var(--hero-portfolio-btn);
-  color: var(--black);
-
   &:hover {
     background-color: var(--hover-portfolio);
     color: var(--black);
@@ -115,7 +87,7 @@
 }
 
 .descriptionBox {
-  background-color: var(--green-light-2-transparent);
+  background-color: var(--background-1);
   padding: 1rem;
   max-width: 21rem;
 

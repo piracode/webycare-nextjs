@@ -1,8 +1,6 @@
 @import '../mixins';
 
 .our-process-section {
-  background-color: var(--green-light-1);
-
   .see-more {
     text-align: center;
   }
@@ -11,7 +9,7 @@
     @include button-styles(
       var(--green-teal),
       var(--inverted-text-color),
-      var(--hover-contact-us),
+      var(--hover-CTA-1),
       var(--hover-text)
     );
     max-width: 15rem;

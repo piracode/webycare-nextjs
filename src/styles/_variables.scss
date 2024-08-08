@@ -9,31 +9,42 @@
 
 /* Light theme */
 body.light {
-  // --background-color: #ffffff;
-  // --text-color: #000000;
+  //Section background-color patterns
+  --background-1: #d2f5e0e6;
+  --background-2: #ecf6f2;
+  // --background-2: #e5fce7;
+  --background-3: #bcffd6;
+  --background-4: #d7fae5;
+  --background-5: #aee4c3;
+
+  //To determine the color of those two last sections
+  --background-6: #94e8b4;
+  // --background-7: purple;
+
+  //Specific setion bacground color (form & prefer to email)
+  --form-background: #8dc9b3;
+  --form-field-background: #d2f5e0e6;
+  --prefer-email-bg: #d2f5e0e6;
+
+  //General text color
   --text-color: #333333;
   --inverted-text-color: #fff;
-  --background-1: #ecf6f2;
-  // --background-light-2: #e5fce7;
-  --gray-dark: #333333;
-  --green-light-1: #d7fae5;
-  --green-light-2: #aee4c3;
-  --green-light-2-transparent: rgba(210, 245, 224, 0.9);
-  --green-bright: #bcffd6;
-  // --green-med: #94e8b4;
-  --green-med: #83cc9f;
-  --green-teal: #008080;
-  --green-dark: #8dc9b3;
+
+  //Navigation
+  --contact-cta: #005c62;
   --navigation-bg: #e8f7ee;
 
   // Home hero styles
   --hero-title-spans: #a8e6cf;
-  --hero-description-bg: #d2f5e0;
-  --hover-contact-us: #173f2a;
+  --green-hero-home: #d2f5e0;
+
+  //Buttons styles
+  --green-teal: #008080;
+  --hover-CTA-1: #173f2a;
   --hover-text: #fff;
+  --hover-text: #000;
   --hover-portfolio: #36dbc8;
   --hero-portfolio-btn: #83cc9f;
-  --green-hero-home: #d2f5e0;
 
   // Light theme Link
   --link-color: #333;
@@ -54,36 +65,43 @@ body.light {
   --theme-hover-bg: #b9ebbe;
   --theme-svg-fill: #000;
   --theme-svg-hover: #1b1b1b;
-
-  //Contact CTA
-  --contact-cta: #005c62;
 }
 
 /* Dark theme */
 body.dark {
-  // --background-color: #121212;
+  //Section background-color patterns
+  --background-1: #25543be6;
+  --background-2: #1c1c1c;
+  --background-3: #2f4f4f;
+  --background-4: #305c44;
+  --background-5: #2e2f2e;
+
+  //To determine the color of those two last sections
+  --background-6: orange;
+  // --background-7: purple;
+
+  //Specific setion bacground color (form & prefer to email)
+  --form-background: #2c4d44;
+  --form-field-background: #25543be6;
+  --prefer-email-bg: #25543be6;
+
+  //General Text color
   --text-color: #e0e0e0;
   --inverted-text-color: #000;
-  --background-1: #1c1c1c;
-  // --background-light-2: #262626;
-  --gray-dark: #cccccc;
-  // --green-light-1: #173f2a;
-  --green-light-1: #305c44;
-  --green-light-2: #2e2f2e;
-  --green-light-2-transparent: rgba(37, 84, 59, 0.9);
-  --green-bright: #2f4f4f;
-  --green-med: #3b7856;
-  --green-teal: #4db6b6;
-  --green-dark: #2c4d44;
 
-  // Home Hero styles
+  //Navigation
+  --contact-cta: #005c62;
   --navigation-bg: #e8f7ee;
+
+  //Home hero styles
   --hero-title-spans: #143725;
-  --hover-contact-us: #83cc9f;
-  --hover-text: #000;
+  --green-hero-home: #2a4f39;
+
+  //Buttons styles
+  --green-teal: #4db6b6;
+  --hover-CTA-1: #83cc9f;
   --hover-portfolio: #83cc9f;
   --hero-portfolio-btn: #a8e6cf;
-  --green-hero-home: #2a4f39;
 
   // Dark theme link colors
   --link-color: #bdf7e3;
@@ -105,7 +123,11 @@ body.dark {
   --theme-hover-bg: #555;
   --theme-svg-fill: #fff;
   --theme-svg-hover: #ddd;
-
-  //Contact CTA
-  --contact-cta: #005c62;
 }
+
+// TO erase soon
+// --green-light-1: #305c44;
+// --green-light-2: #2e2f2e;
+// --green-bright: #2f4f4f;
+// --green-med: #3b7856;
+// --green-dark: #2c4d44;

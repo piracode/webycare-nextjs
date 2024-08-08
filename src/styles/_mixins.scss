@@ -50,3 +50,19 @@
     }
   }
 }
+
+//Mixin to apply alternating background color on eahc section html element
+
+@mixin alternating-sections($colors...) {
+  $length: length($colors);
+
+  @for $i from 1 through $length {
+    &:nth-of-type(#{$i}) {
+      background-color: nth($colors, $i);
+    }
+  }
+
+  &:nth-of-type(#{$length}n + 1) {
+    background-color: nth($colors, 1);
+  }
+}
